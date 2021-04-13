@@ -24,7 +24,16 @@
             <div class="tab is-active" block-content-name="new_musician">
                 <!--                тут будет содержимое первого таба-->
                 <div class="new_musician">
+                    <div class="add_musician">
+                        <div class="button">
+                            Пока что просто кнопка
+                        </div>
 
+                    </div>
+
+                    <div>
+
+                    </div>
                 </div>
             </div>
             <div class="tab " block-content-name="new_genre">

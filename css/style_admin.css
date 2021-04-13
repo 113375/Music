@@ -15,15 +15,18 @@
     flex: 1;
     text-align: center;
     font-size: 1.5em;
-    transition: .4s;
+    transition: .8s;
+    color: white;
 }
 
 
 .tabs-nav{
-    background-color: #9d9d9d;
+    background-color: #000000;
+
 }
 .tabs-nav__item.is-active {
-    background-color: white;
+    background-color: #ffffff;
+    color: black;
 }
 
 .tab {
@@ -34,12 +37,17 @@
 
 .tab.is-active {
     display: block;
+
 }
 
 
 .new_musician{
     /*стили добавление нового музыканта*/
 }
+.button{
+    cursor: pointer;
+}
+
 
 .new_genre{
     /*стили добавления нового жанра*/
