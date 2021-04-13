@@ -1,8 +1,13 @@
+
 .tabs-nav {
     display: flex;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
+.container{
+    text-align: center;
+}
 .tabs-nav__item {
     border-bottom: 2px solid transparent;
     padding: 20px;
@@ -14,15 +19,34 @@
 }
 
 
+.tabs-nav{
+    background-color: #9d9d9d;
+}
 .tabs-nav__item.is-active {
-    border-color: #0fa0b8;
+    background-color: white;
 }
 
 .tab {
     display: none;
     padding: 20px;
+    text-align: left;
 }
 
 .tab.is-active {
     display: block;
+}
+
+
+.new_musician{
+    /*стили добавление нового музыканта*/
+}
+
+.new_genre{
+    /*стили добавления нового жанра*/
+}
+.new_album{
+    /*стили добавления нового альбома*/
+}
+.users{
+    /*стили показа всех пользователей платформы для их редактирования итд */
 }

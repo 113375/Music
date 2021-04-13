@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style_admin.css">
 </head>
 <body>
+
 <div class="container">
     <h2>Самая удобная админ панель, которой вы только пользовались</h2>
     <div class="tabs">
@@ -20,10 +21,27 @@
             <div class="tabs-nav__item" data-tab-name="users">Пользователи</div>
         </div>
         <div class="tabs__content">
-            <div class="tab is-active"  block-content-name="new_musician">Что-то в табе 1</div>
-            <div class="tab "  block-content-name="new_genre">Что-то в табе 2</div>
-            <div class="tab " block-content-name="new_album" >Херня</div>
-            <div class="tab "  block-content-name="users">Пользователи</div>
+            <div class="tab is-active" block-content-name="new_musician">
+                <!--                тут будет содержимое первого таба-->
+                <div class="new_musician">
+
+                </div>
+            </div>
+            <div class="tab " block-content-name="new_genre">
+                <div class="new_genre">
+
+                </div>
+            </div>
+            <div class="tab " block-content-name="new_album">
+                <div class="new_album">
+
+                </div>
+            </div>
+            <div class="tab " block-content-name="users">
+                <div class="users">
+
+                </div>
+            </div>
         </div>
 
     </div>
