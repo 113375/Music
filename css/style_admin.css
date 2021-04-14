@@ -48,7 +48,19 @@
     cursor: pointer;
 }
 
+.musician_block{
+    transition: all 2s ease;
+    display: flex;
+    margin: 20px;
+}
 
+textarea{
+    border-radius: 10px;
+}
+.button-custom{
+    border-radius: 11px;
+    padding: 1%;
+}
 .new_genre{
     /*стили добавления нового жанра*/
 }

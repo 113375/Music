@@ -23,49 +23,47 @@ let tab = function () {
 };
 tab();
 
-let add_button = function (){
+let add_button = function () {
     let button = document.querySelector(".button");
     button.addEventListener('click', after_click);
 
-    function after_click(){
-        // // будет добавление добавления нового музыканта
-        // let musician_block = document.createElement("div");
-        // musician_block.style.display = display.flex;
+    function after_click() {
+        let div = document.createElement("div");
+        div.classList.add("musician_block");
+        div.innerHTML = "    <div >\n" +
+            "        <div style=\"display: flex; margin-bottom: 20px\">\n" +
+            "            <label>\n" +
+            "                <input style='margin: 5px' type=\"text\" placeholder=\"Название\">\n" +
+            "            </label>\n" +
+            "            <label>\n" +
+            "                <input style='margin: 5px' type=\"number\" placeholder=\"год начала\">\n" +
+            "            </label>\n" +
+            "            <label>\n" +
+            "                <input style='margin: 5px' type=\"number\" placeholder=\"год конца\">\n" +
+            "            </label>\n" +
+            "        </div>\n" +
+            "\n" +
+            "        <div>\n" +
+            "            <label style='margin: 5px' for=\"photo\" style=\"cursor: pointer\"> Загрузите фото\n" +
+            "                <input style='margin: 5px' id=\"photo\" type=\"file\" >\n" +
+            "            </label>\n" +
+            "        </div>\n" +
+            "    </div>\n" +
+            "    <div style=\"display: block; width: 100%; margin-left: 5%\">\n" +
+            "        <div style='margin: 5px'>Описание музыканта</div>\n" +
+            "        <div>\n" +
+            "            <textarea style='margin: 5px' style=\"width: 75%\">\n" +
+            "\n" +
+            "            </textarea>\n" +
+            "        </div>\n" +
+            "\n" +
+            "    </div>\n" +
+            "\n";
+        let add_musician = document.querySelector(".form-add-musician");
+        add_musician.appendChild(div);
 
     }
 }
 
 add_button();
 
-//
-// <div class="musician_block" style="display: flex">
-//     <div >
-//         <div style="display: flex; margin-bottom: 20px">
-//             <label>
-//                 <input type="text" placeholder="Название">
-//             </label>
-//             <label>
-//                 <input type="number" placeholder="год начала">
-//             </label>
-//             <label>
-//                 <input type="number" placeholder="год конца">
-//             </label>
-//         </div>
-//
-//         <div>
-//             <label for="photo" style="cursor: pointer"> Загрузите фото
-//                 <input id="photo" type="file" >
-//             </label>
-//         </div>
-//     </div>
-//     <div style="display: block; width: 100%; margin-left: 5%">
-//         <div>Описание музыканта</div>
-//         <div>
-//             <textarea style="width: 75%">
-//
-//             </textarea>
-//         </div>
-//
-//     </div>
-//
-// </div>

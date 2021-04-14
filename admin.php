@@ -25,9 +25,14 @@
                 <!--                тут будет содержимое первого таба-->
                 <div class="new_musician">
                     <div class="add_musician">
-                        <div class="button">
-                            Пока что просто кнопка
-                        </div>
+                        <form class="form-add-musician" action="">
+                            <div style="display: flex; justify-content: space-between">
+                                <div class="button btn-info button-custom">
+                                    Добавить
+                                </div>
+                                <button type="submit" class="btn-dark button-custom">Отправить</button>
+                            </div>
+                        </form>
 
                     </div>
 
