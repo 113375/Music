@@ -5,9 +5,10 @@
     border-radius: 10px;
 }
 
-.container{
+.container {
     text-align: center;
 }
+
 .tabs-nav__item {
     border-bottom: 2px solid transparent;
     padding: 20px;
@@ -20,10 +21,11 @@
 }
 
 
-.tabs-nav{
+.tabs-nav {
     background-color: #000000;
 
 }
+
 .tabs-nav__item.is-active {
     background-color: #ffffff;
     color: black;
@@ -35,38 +37,61 @@
     text-align: left;
 }
 
+input {
+    margin: 5px;
+}
+
 .tab.is-active {
     display: block;
 
 }
 
 
-.new_musician{
+.new_musician {
     /*стили добавление нового музыканта*/
 }
-.button{
+
+.button {
     cursor: pointer;
 }
 
-.musician_block{
+.musician_block {
     transition: all 2s ease;
     display: flex;
     margin: 20px;
 }
 
-textarea{
+textarea {
     border-radius: 10px;
+    margin: 5px;
+    width: 75%;
+
 }
-.button-custom{
+
+.button_type2 {
+    height: 40px;
+    padding: 1%;
+    transition: all .5s ease;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.button-custom {
     border-radius: 11px;
     padding: 1%;
 }
-.new_genre{
+
+.new_genre {
     /*стили добавления нового жанра*/
 }
-.new_album{
+
+.new_album {
     /*стили добавления нового альбома*/
 }
-.users{
+
+.users {
     /*стили показа всех пользователей платформы для их редактирования итд */
 }

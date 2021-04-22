@@ -25,14 +25,14 @@
                 <!--                тут будет содержимое первого таба-->
                 <div class="new_musician">
                     <div class="add_musician">
-                        <form class="form-add-musician" action="">
+                        <div class="form-add-musician">
                             <div style="display: flex; justify-content: space-between">
                                 <div class="button btn-info button-custom">
                                     Добавить
                                 </div>
-                                <button type="submit" class="btn-dark button-custom">Отправить</button>
+                                <button type="button" class="btn-dark button-custom">Отправить</button>
                             </div>
-                        </form>
+                        </div>
 
                     </div>
 
@@ -60,7 +60,10 @@
 
     </div>
 
+
 </div>
 </body>
 <script src="js/tab.js"></script>
 </html>
+
+
