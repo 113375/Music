@@ -23,6 +23,7 @@ function f($pdo)
     echo $end_year . "<br>";
     echo $photo . "<br>";
     echo $text;
+    // надо будет сделать через json добавление нового музыканта и вообще сделать сервер через json
 
     if(!$name or !$start_year or !$photo or !$text){
         var_dump(http_response_code(400));
