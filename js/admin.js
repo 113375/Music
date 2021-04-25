@@ -112,17 +112,16 @@ let add_button = function () {
     }
 }
 
+
 async function make_single_insert() {
     //функция для добавления одного музыканта
     let all_data = new Map;
     let parent = this.parentElement.parentElement;
     let children = parent.children;
-    console.log(children);
     let labels_with_inputs = children[0];
 
     for (let i = 0; i < labels_with_inputs.children[0].children.length; i++) {
         let input = labels_with_inputs.children[0].children[i].children[0]
-        console.log(input.value, input.name)
         all_data.set(input.name, input.value)
     }
 
@@ -131,17 +130,27 @@ async function make_single_insert() {
     let textArea = children[1].children[1].children[0].value;
     all_data.set("text", textArea);
 
-    //TODO надо будет сделать через json
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8888/Music/admin/musician.php";
 
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
 
-    let response = await fetch('http://localhost:8888/Music/backAdmin.php', {
-        method: 'POST',
-        body: formData
+    xhr.onreadystatechange = function () {
+        // если запрос принят и сервер ответил, что всё в порядке
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(this.responseText);
+        }
+    };
+
+    var data = JSON.stringify({
+        "name": all_data.get("name"),
+        "start": all_data.get("start"),
+        "end": all_data.get("end"),
+        "text": all_data.get("text"),
+        "photo": all_data.get("photo")
     });
-
-    alert(response.status)
-
-
+    xhr.send(data);
 }
 
 add_button();
