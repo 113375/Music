@@ -1,6 +1,6 @@
 let tab = function () {
     let tabNav = document.querySelectorAll(".tabs-nav__item"),
-        tabContent = document.querySelectorAll('.admin'),
+        tabContent = document.querySelectorAll('.tab'),
         tabName;
     tabNav.forEach(elem => {
         elem.addEventListener("click", selectTabNav)
@@ -11,7 +11,8 @@ let tab = function () {
             elem.classList.remove('is-active')
         });
         this.classList.add("is-active");
-        tabName = this.getAttribute("data-admin-name")
+        tabName = this.getAttribute("data-tab-name")
+
         selectTabContent(tabName)
     }
 
@@ -126,9 +127,11 @@ async function make_single_insert() {
     }
 
     all_data.set("photo", labels_with_inputs.children[1].children[0].files[0]);
+    console.log(all_data.get("photo"))
 
     let textArea = children[1].children[1].children[0].value;
     all_data.set("text", textArea);
+
 
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:8888/Music/admin/musician.php";
@@ -142,15 +145,24 @@ async function make_single_insert() {
             alert(this.responseText);
         }
     };
+    let photo = all_data.get("photo");
 
-    var data = JSON.stringify({
+    let data = JSON.stringify({
         "name": all_data.get("name"),
         "start": all_data.get("start"),
         "end": all_data.get("end"),
-        "text": all_data.get("text"),
-        "photo": all_data.get("photo")
+        "text": all_data.get("text")
     });
     xhr.send(data);
+    let id = 0;
+    let table = "musician"
+    if (photo){
+        load_photo(photo, id, table);
+    }
+}
+
+function load_photo(photo, id, table){
+    //загрузка фото пользователя с по id
 }
 
 add_button();

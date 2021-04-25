@@ -38,8 +38,8 @@
 
 
 // на какие данные рассчитан этот скрипт
-header("Content-Type: application/json");
+header("Content-Type: multipart/form-data");
 // разбираем JSON-строку на составляющие встроенной командой
 $data = json_decode(file_get_contents("php://input"));
 // отправляем в ответ строку с подтверждением
-echo "Имя - $data->name, фото - $data->photo, текст - $data->text";
+echo $data->name;
