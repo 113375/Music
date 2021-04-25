@@ -79,6 +79,11 @@ textarea {
     cursor: pointer;
 }
 
+#header {
+    display: flex;
+    justify-content: space-between ;
+}
+
 .button-custom {
     border-radius: 11px;
     padding: 1%;

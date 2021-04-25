@@ -1,6 +1,6 @@
 let tab = function () {
     let tabNav = document.querySelectorAll(".tabs-nav__item"),
-        tabContent = document.querySelectorAll('.tab'),
+        tabContent = document.querySelectorAll('.admin'),
         tabName;
     tabNav.forEach(elem => {
         elem.addEventListener("click", selectTabNav)
@@ -11,7 +11,7 @@ let tab = function () {
             elem.classList.remove('is-active')
         });
         this.classList.add("is-active");
-        tabName = this.getAttribute("data-tab-name")
+        tabName = this.getAttribute("data-admin-name")
         selectTabContent(tabName)
     }
 
@@ -23,7 +23,9 @@ let tab = function () {
 };
 tab();
 
+//кнопка добавления новой формы
 let add_button = function () {
+    //фукция добавления новой формы для отправки
     let button = document.querySelector(".button");
     button.addEventListener('click', after_click);
 
@@ -108,43 +110,38 @@ let add_button = function () {
         //В общем надо как-то реализовать удаление элементов этого блока, но посмотрим
         this.parentElement.parentElement.remove();
     }
+}
 
-    async function make_single_insert() {
-        //функция для добавления одного музыканта
-        let all_data = new Map;
-        let parent = this.parentElement.parentElement;
-        let children = parent.children;
-        console.log(children);
-        let labels_with_inputs = children[0];
+async function make_single_insert() {
+    //функция для добавления одного музыканта
+    let all_data = new Map;
+    let parent = this.parentElement.parentElement;
+    let children = parent.children;
+    console.log(children);
+    let labels_with_inputs = children[0];
 
-        for (let i = 0; i < labels_with_inputs.children[0].children.length; i++) {
-            let input = labels_with_inputs.children[0].children[i].children[0]
-            console.log(input.value, input.name)
-            all_data.set(input.name, input.value)
-        }
-
-        all_data.set("photo", labels_with_inputs.children[1].children[0].files[0]);
-
-        let textArea = children[1].children[1].children[0].value;
-        all_data.set("text", textArea);
-
-        //TODO надо будет сделать через объект FormData
-        let formData = new FormData();
-        formData.append("photo", labels_with_inputs.children[1].children[0].files[0]);
-
-        for(let [key, value] of all_data){
-            formData.append(key, value)
-        }
-        let response = await fetch('http://localhost:8888/Music/backAdmin.php', {
-            method: 'POST',
-            body: formData
-        });
-
-        alert(response.status)
-
-
-
+    for (let i = 0; i < labels_with_inputs.children[0].children.length; i++) {
+        let input = labels_with_inputs.children[0].children[i].children[0]
+        console.log(input.value, input.name)
+        all_data.set(input.name, input.value)
     }
+
+    all_data.set("photo", labels_with_inputs.children[1].children[0].files[0]);
+
+    let textArea = children[1].children[1].children[0].value;
+    all_data.set("text", textArea);
+
+    //TODO надо будет сделать через json
+
+
+    let response = await fetch('http://localhost:8888/Music/backAdmin.php', {
+        method: 'POST',
+        body: formData
+    });
+
+    alert(response.status)
+
+
 }
 
 add_button();

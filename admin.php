@@ -26,7 +26,7 @@
                 <div class="new_musician">
                     <div class="add_musician">
                         <div class="form-add-musician">
-                            <div style="display: flex; justify-content: space-between">
+                            <div id="header">
                                 <div class="button btn-info button-custom">
                                     Добавить
                                 </div>
@@ -37,7 +37,6 @@
                     </div>
 
                     <div>
-
                     </div>
                 </div>
             </div>
@@ -63,7 +62,7 @@
 
 </div>
 </body>
-<script src="js/tab.js"></script>
+<script src="js/admin.js"></script>
 </html>
 
 

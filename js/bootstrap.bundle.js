@@ -4160,7 +4160,7 @@
 
   var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
 
-  var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
+  var TAB_KEYCODE = 9; // KeyboardEvent.which value for admin key
 
   var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
 
@@ -6590,7 +6590,7 @@
 
   var NAME$9 = 'tab';
   var VERSION$9 = '4.6.0';
-  var DATA_KEY$9 = 'bs.tab';
+  var DATA_KEY$9 = 'bs.admin';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
   var JQUERY_NO_CONFLICT$9 = $__default['default'].fn[NAME$9];
@@ -6608,7 +6608,7 @@
   var SELECTOR_NAV_LIST_GROUP$1 = '.nav, .list-group';
   var SELECTOR_ACTIVE$2 = '.active';
   var SELECTOR_ACTIVE_UL = '> li > .active';
-  var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]';
+  var SELECTOR_DATA_TOGGLE$4 = '[data-toggle="admin"], [data-toggle="pill"], [data-toggle="list"]';
   var SELECTOR_DROPDOWN_TOGGLE$1 = '.dropdown-toggle';
   var SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active';
   /**
