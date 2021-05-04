@@ -127,7 +127,6 @@ async function make_single_insert() {
     }
 
     all_data.set("photo", labels_with_inputs.children[1].children[0].files[0]);
-    console.log(all_data.get("photo"))
 
     let textArea = children[1].children[1].children[0].value;
     all_data.set("text", textArea);
@@ -154,12 +153,11 @@ async function make_single_insert() {
         "text": all_data.get("text")
     });
     xhr.send(data);
-    make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
 
     let id = 0;
     let table = "musician"
     if (photo) {
-
+        make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
         load_photo(photo, id, table);
     }
 }
