@@ -154,15 +154,51 @@ async function make_single_insert() {
         "text": all_data.get("text")
     });
     xhr.send(data);
+    make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
+
     let id = 0;
     let table = "musician"
-    if (photo){
+    if (photo) {
+
         load_photo(photo, id, table);
     }
 }
 
-function load_photo(photo, id, table){
+async function make_request(query, params) {
+    let param = {query: query, params: params, all: 0};
+    let response = await fetch("http://localhost:8888/query.php",
+        {
+            method: "POST",
+            body: JSON.stringify(param)
+        });
+
+
+    if (response.ok) {
+        let json = await response.json();
+    } else {
+        alert("Ошибка HTTP: " + response.status);
+    }
+}
+
+
+function load_photo(photo, id, table) {
     //загрузка фото пользователя с по id
+    let form = new FormData();
+    form.append("image", photo)
+    form.append("id", id);
+    form.append("table", table)
+
+    var request = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        // если запрос принят и сервер ответил, что всё в порядке
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            alert(this.responseText);
+        }
+    };
+
+    request.open("POST", "http://localhost:8888/admin/load/image.php");
+    request.send(form);
+
 }
 
 add_button();
