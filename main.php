@@ -12,7 +12,8 @@
 </head>
 <body>
 <div class="container">
-    <?php include "temp/header.php" //TODO надо будет доделать это все ?>
+    <?php include "temp/header.php" ?>
+
 
 </div>
 
