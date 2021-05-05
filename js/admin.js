@@ -186,10 +186,10 @@ function load_photo(photo, id, table) {
     form.append("id", id);
     form.append("table", table)
 
-    var request = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
         // если запрос принят и сервер ответил, что всё в порядке
-        if (xhr.readyState === 4 && xhr.status === 200) {
+        if (request.readyState === 4 && xhr.status === 200) {
             alert(this.responseText);
         }
     };

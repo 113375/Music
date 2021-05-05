@@ -1,5 +1,5 @@
 <?php
-include "dataBase.php";
+include "admin/dataBase.php";
 function query($query, $param, $all){
     $pdo = pdo();
     $stmt =  $pdo -> prepare($query);
@@ -11,8 +11,8 @@ function query($query, $param, $all){
     }
     return $row;
 }
+$data = json_decode(file_get_contents("php://input"));
 
-
-echo query($_POST["query"], $_POST["params"], $_POST["all"]);
+echo query($data->query, $data->params,$data->all);
 
 ?>
