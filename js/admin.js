@@ -157,14 +157,14 @@ async function make_single_insert() {
     let id = 0;
     let table = "musician"
     if (photo) {
-        make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
+        await make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
         load_photo(photo, id, table);
     }
 }
 
 async function make_request(query, params) {
     let param = {query: query, params: params, all: 0};
-    let response = await fetch("http://localhost:8888/query.php",
+    let response = await fetch("http://localhost:8888/Music/query.php",
         {
             method: "POST",
             body: JSON.stringify(param)
@@ -189,7 +189,7 @@ function load_photo(photo, id, table) {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         // если запрос принят и сервер ответил, что всё в порядке
-        if (request.readyState === 4 && xhr.status === 200) {
+        if (request.readyState === 4 && request.status === 200) {
             alert(this.responseText);
         }
     };

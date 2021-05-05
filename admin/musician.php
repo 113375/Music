@@ -6,7 +6,7 @@ header("Content-Type: application/json");
 // разбираем JSON-строку на составляющие встроенной командой
 $data = json_decode(file_get_contents("php://input"));
 // отправляем в ответ строку с подтверждением
-include  "admin/dataBase.php";
+include  "dataBase.php"; // не менять эту строку, даже если очень хочется
 try {
     if ($data->name && $data->start) {
         $pdo = pdo();
