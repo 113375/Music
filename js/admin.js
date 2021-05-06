@@ -26,7 +26,7 @@ tab();
 
 //кнопка добавления новой формы
 let add_button = function () {
-    //фукция добавления новой формы для отправки
+    //функция добавления новой формы для отправки
     let button = document.querySelector(".button");
     button.addEventListener('click', after_click);
 
@@ -157,25 +157,55 @@ async function make_single_insert() {
     let id = 0;
     let table = "musician"
     if (photo) {
-        await make_request("SELECT id FROM musician WHERE name = ?, start = ?", [all_data.get("name"), all_data.get("start")]);
-        load_photo(photo, id, table);
+        let data = make_request("SELECT id FROM musician WHERE name = ? AND start = ?", [all_data.get("name"), all_data.get("start")]);
+        // load_photo(photo, id, table);
     }
 }
 
-async function make_request(query, params) {
+function make_request(query, params) {
+    let dataReceived = ""
     let param = {query: query, params: params, all: 0};
-    let response = await fetch("http://localhost:8888/Music/query.php",
-        {
-            method: "POST",
-            body: JSON.stringify(param)
-        });
+    //TODO надо разобраться с jquery
+
+    $.ajax({
+        url: 'http://localhost:8888/Music/query.php',
+        type: 'POST',
+        dataType: 'json',
+        data: param
+    }).done(function (data) {
+        console.log(data, data.length);
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        }
+    }).fail(function (error) {
+        console.log(error);
+    });
+    // fetch("http://localhost:8888/Music/query.php",
+    //     {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(param)
+    //     }).then(resp => {
+    //     if (resp.status === 200) {
+    //         return resp.json()
+    //     } else {
+    //         console.log("Status: " + resp.status)
+    //         return Promise.reject("server")
+    //     }
+    // })
+    //     .then(dataJson => {
+    //         dataReceived = JSON.parse(dataJson)
+    //     })
+    //     .catch(err => {
+    //         if (err === "server") return
+    //         console.log(err)
+    //     })
+    //
+    // console.log(`Received: ${dataReceived}`)
 
 
-    if (response.ok) {
-        let json = await response.json();
-    } else {
-        alert("Ошибка HTTP: " + response.status);
-    }
 }
 
 
@@ -194,7 +224,7 @@ function load_photo(photo, id, table) {
         }
     };
 
-    request.open("POST", "http://localhost:8888/admin/load/image.php");
+    request.open("POST", "http://localhost:8888/Music/admin/load/image.php");
     request.send(form);
 
 }
