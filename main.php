@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <?php include "temp/header.php" ?>
+    <?php include "templates/header.php" ?>
 
 
 </div>

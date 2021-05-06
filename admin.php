@@ -23,22 +23,7 @@
         <div class="tabs__content">
             <div class="tab is-active" block-content-name="new_musician">
                 <!--                тут будет содержимое первого таба-->
-                <div class="new_musician">
-                    <div class="add_musician">
-                        <div class="form-add-musician">
-                            <div id="header">
-                                <div class="button btn-info button-custom">
-                                    Добавить
-                                </div>
-                                <button type="button" class="btn-dark button-custom">Отправить</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div>
-                    </div>
-                </div>
+               <?php require "templates/admin/addMusician.php"?>
             </div>
             <div class="tab " block-content-name="new_genre">
                 <div class="new_genre">
@@ -63,6 +48,7 @@
 </div>
 </body>
 <script src="js/admin.js"></script>
+<script src="js/navbar.js"></script>
 </html>
 
 
