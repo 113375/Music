@@ -47,7 +47,7 @@
 
 </div>
 </body>
-<script src="js/admin.js"></script>
+<script src="js/admin/admin.js"></script>
 <script src="js/navbar.js"></script>
 </html>
 

@@ -101,6 +101,57 @@ body {
     border-radius: 60px;
 }
 
-.is-active {
-    border-bottom: 5px solid var(--light-red);
+
+.tabs__content {
+    margin-top: var(--navbar-height);
+    padding-right: 60px;
+    padding-left: 60px;
+
 }
+
+.tab {
+    display: none;
+    border-bottom: 0 solid sienna;
+
+}
+
+.tab.is-active {
+    display: block;
+}
+
+.tabs-nav__item.is-active {
+    background-color: var(--light-red);
+    border-radius: 10px;
+    color: white;
+}
+
+.tabs-nav__item {
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    padding: 2px;
+
+}
+
+/*.tabs-nav__item:hover:after,*/
+/*.tabs-nav__item:hover:before {*/
+/*    -webkit-backface-visibility: hidden;*/
+/*    backface-visibility: hidden;*/
+/*    border-bottom-color: var(--light-red);*/
+/*    transition: width 310ms ease-in-out;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.tabs-nav__item:after,*/
+/*.tabs-nav__item:before {*/
+/*    -webkit-backface-visibility: hidden;*/
+/*    backface-visibility: hidden;*/
+/*    border-bottom: 5px solid var(--light-red);*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    content: " ";*/
+/*    display: block;*/
+/*    margin: 0 auto;*/
+/*    position: relative;*/
+/*    transition: all 210ms ease-in-out;*/
+/*    width: 0;*/
+/*}*/

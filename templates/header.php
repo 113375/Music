@@ -3,9 +3,9 @@
 ?>
 <nav class="navigation">
 
-    <div class="left-side">
-        <div class="is-active">Главная</div>
-        <div>Профиль</div>
+    <div class="left-side tabs__nav tabs-nav">
+        <div class="tabs-nav__item is-active" data-tab-name="main_page">Главная</div>
+        <div class="tabs-nav__item" data-tab-name="profile">Профиль</div>
     </div>
     <div class="find">
         <input id="find" type="text" placeholder="Поиск">

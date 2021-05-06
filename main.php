@@ -13,9 +13,17 @@
 <body>
 <div class="container">
     <?php include "templates/header.php" ?>
-
+    <div class="tabs__content">
+        <div class="tab is-active" block-content-name="main_page">
+            <p>Тестовый текст1 </p>
+        </div>
+        <div class="tab" block-content-name="profile">
+            <p>тест от слона </p>
+        </div>
+    </div>
 
 </div>
+<script src="js/navbar.js"></script>
 
 </body>
 </html>
