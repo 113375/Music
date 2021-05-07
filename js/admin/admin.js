@@ -1,3 +1,11 @@
+let add_jquery = function (){
+    var script = document.createElement('script');
+    script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+    script.type = 'text/javascript';
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+
 //кнопка добавления новой формы
 let add_button = function () {
     //функция добавления новой формы для отправки
@@ -147,7 +155,7 @@ function make_request(query, params) {
         dataType: 'json',
         data: param
     }).done(function (data) {
-        console.log(data, data.length);
+        console.log(data);
         for (let i = 0; i < data.length; i++) {
             console.log(data[i]);
         }
@@ -202,6 +210,7 @@ function load_photo(photo, id, table) {
     request.send(form);
 
 }
+add_jquery()
 
 add_button();
 
