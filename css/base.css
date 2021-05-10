@@ -1,7 +1,7 @@
 /*css файл с базовыми стилями, чтобы не было конфликтов в стилях*/
 
 :root {
-    --bg-color: rgb(184, 228, 255);
+    --bg-color: rgb(0, 0, 0);
     --header-color: rgb(255, 255, 255);
     --font-size-header: 25px;
     --font-size-header-find: 20px;
@@ -11,7 +11,7 @@
     --navbar-height: 70px;
     --photo-height: 62px;
     --right-side-padding: 8%;
-    --light-red: rgba(255, 0, 0, 0.4);
+    --light-red: rgb(0, 0, 0);
 }
 
 body {
@@ -66,12 +66,12 @@ body {
 }
 
 #find::-moz-placeholder {
-    color: #7effb5;
+    color: #ffffff;
     font-size: var(--font-size-header-find);
 }
 
 #find::-webkit-input-placeholder {
-    color: #7effb5;
+    color: #ffffff;
     font-size: var(--font-size-header-find);
 }
 
@@ -98,7 +98,7 @@ body {
     height: var(--photo-height);
     width: var(--photo-height);
 
-    background-color: #1c7430;
+    background-color: #000000;
     border-radius: 60px;
 }
 

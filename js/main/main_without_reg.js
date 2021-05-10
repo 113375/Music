@@ -34,7 +34,7 @@ let description = function () {
                     div.innerText = text.substr(0, Math.ceil(result))
                 }
             });
-            this.style.color = "#105964";
+            this.style.color = "#000";
             this.setAttribute("active", "true")
             this.innerText = "Свернуть"
 

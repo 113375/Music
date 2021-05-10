@@ -30,7 +30,7 @@
 
 .button {
     border-radius: 15px;
-    background-color: #0f6674;
+    background-color: #000000;
     color: white;
     padding: 7px;
     cursor: pointer;
@@ -39,7 +39,7 @@
 }
 .button:hover{
     color: black;
-    background-color: #7effb5;
+    background-color: #ffffff;
 }
 
 .description-btn {
@@ -47,7 +47,7 @@
     cursor: pointer;
 }
 .description-btn:hover{
-    color: #0f6674;
+    color: #000000;
 
 }
 
