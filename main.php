@@ -9,16 +9,24 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main/main.css">
 </head>
 <body>
 <div class="container">
     <?php include "templates/header.php" ?>
     <div class="tabs__content">
         <div class="tab is-active" block-content-name="main_page">
-            <p>Тестовый текст1 </p>
+
+            <?php
+            if (!$_COOKIE['user']) {
+                include "templates/main/main_without_reg.php";
+            } ?>
+
         </div>
         <div class="tab" block-content-name="profile">
-            <p>тест от слона </p>
+            <?php if (!$_COOKIE['user']) {
+                include "templates/main/profile_without_reg.php";
+            } ?>
         </div>
     </div>
 

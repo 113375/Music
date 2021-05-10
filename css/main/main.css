@@ -1,0 +1,16 @@
+/*Это будут стили главной страницы без регистрации*/
+root{
+    /*тут будут переменные для главной страницы*/
+}
+
+.container-for-offers{
+    display: flex;
+}
+.container-for-offers.left-side-offer{
+    height: 50px;
+    width: 50%;
+}
+.container-for-offers.right-side-offer{
+    width: 50%;
+    background-color: #1d2124;
+}
