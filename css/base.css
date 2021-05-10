@@ -22,8 +22,9 @@ body {
 }
 
 .container {
-    margin: 0;
     padding: 0;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .navigation {
@@ -106,6 +107,7 @@ body {
     margin-top: var(--navbar-height);
     padding-right: 60px;
     padding-left: 60px;
+    width: 100%;
 
 }
 
@@ -131,3 +133,5 @@ body {
     padding: 2px;
 
 }
+
+/*TODO надо сделать адаптивность для header*/

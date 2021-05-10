@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="css/main/main.css">
 </head>
 <body>
-<div class="container">
-    <?php include "templates/header.php" ?>
+<?php include "templates/header.php" ?>
+<div class="">
+
     <div class="tabs__content">
         <div class="tab is-active" block-content-name="main_page">
 

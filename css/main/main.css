@@ -1,16 +1,60 @@
 /*Это будут стили главной страницы без регистрации*/
-root{
-    /*тут будут переменные для главной страницы*/
+.container-for-offers {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 70px;
+    height: 400px;
 }
 
-.container-for-offers{
+.side {
+    width: 45%;
+    text-align: center;
+    padding: 25px 40px;
+    background-color: white;
+    border-radius: 37px;
+    margin-right: 10px;
+
+}
+
+.text-inside-side {
+    font-size: 27px;
+}
+
+.buttons {
     display: flex;
+    justify-content: space-between;
+    padding: 30px 45px;
+    font-size: 23px;
 }
-.container-for-offers.left-side-offer{
-    height: 50px;
-    width: 50%;
+
+.button {
+    border-radius: 15px;
+    background-color: #0f6674;
+    color: white;
+    padding: 7px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+
 }
-.container-for-offers.right-side-offer{
-    width: 50%;
-    background-color: #1d2124;
+.button:hover{
+    color: black;
+    background-color: #7effb5;
 }
+
+.description-btn {
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+.description-btn:hover{
+    color: #0f6674;
+
+}
+
+.description{
+    font-size: 18px;
+}
+
+/*TODO надо сделать адаптивность*/
+
+
