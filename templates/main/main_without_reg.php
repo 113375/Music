@@ -1,7 +1,3 @@
-<?php
-//TODO страница будет разделена на две, немного будет описание сайта
-// Слева будет предложение зарегистрироваться, справа будет предложение войти, и типа надпись, что вы не вошли
-?>
 <div class="container-for-offers" >
     <div class="side">
         <!--левый блок с предложением зарегистрироваться-->
@@ -10,7 +6,7 @@
         </div>
         <div class="buttons">
             <!--            блок с кнопками-->
-            <div class="button">
+            <div class="button registration">
                 Регистрация
             </div>
             <div class="description-btn" name="left" active="false">
@@ -30,7 +26,7 @@
 
         <div class="buttons">
             <!--            блок с кнопками-->
-            <div class="button" style="padding: 7px 30px;">
+            <div class="button log-in" style="padding: 7px 30px;">
                 Вход
             </div>
             <div class="description-btn" name="right" active="false">

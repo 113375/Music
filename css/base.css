@@ -66,12 +66,12 @@ body {
 }
 
 #find::-moz-placeholder {
-    color: #7effb5;
+    color: #000000;
     font-size: var(--font-size-header-find);
 }
 
 #find::-webkit-input-placeholder {
-    color: #7effb5;
+    color: #000000;
     font-size: var(--font-size-header-find);
 }
 
