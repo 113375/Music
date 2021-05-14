@@ -9,7 +9,7 @@
             <div class="tabs-nav__item" data-tab-name="profile">Профиль</div>
         </div>
         <div class="find">
-            <input id="find" type="text" placeholder="Поиск">
+<!--            <input id="find" type="text" placeholder="Поиск">-->
         </div>
 
         <div class="name-photo">

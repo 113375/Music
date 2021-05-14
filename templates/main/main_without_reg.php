@@ -6,7 +6,7 @@
         </div>
         <div class="buttons">
             <!--            блок с кнопками-->
-            <div class="button registration">
+            <div class="tabs-nav__item button registration" data-tab-name="registration">
                 Регистрация
             </div>
             <div class="description-btn" name="left" active="false">
@@ -26,7 +26,7 @@
 
         <div class="buttons">
             <!--            блок с кнопками-->
-            <div class="button log-in" style="padding: 7px 30px;">
+            <div class="tabs-nav__item button log-in" data-tab-name="log-in" style="padding: 7px 30px;">
                 Вход
             </div>
             <div class="description-btn" name="right" active="false">

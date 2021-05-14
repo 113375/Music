@@ -52,28 +52,28 @@ body {
 }
 
 
-#find {
-    /*середина header*/
-    height: 35px;
-    border: 0 solid #cccccc;
-    background: var(--light-red);
-    border-radius: 10px;
-    text-align: right;
-    padding-right: 10px;
-    padding-left: 10px;
-    width: var(--find-width);
+/*#find {*/
+/*    !*середина header*!*/
+/*    height: 35px;*/
+/*    border: 0 solid #cccccc;*/
+/*    background: var(--light-red);*/
+/*    border-radius: 10px;*/
+/*    text-align: right;*/
+/*    padding-right: 10px;*/
+/*    padding-left: 10px;*/
+/*    width: var(--find-width);*/
 
-}
+/*}*/
 
-#find::-moz-placeholder {
-    color: #000000;
-    font-size: var(--font-size-header-find);
-}
+/*#find::-moz-placeholder {*/
+/*    color: #000000;*/
+/*    font-size: var(--font-size-header-find);*/
+/*}*/
 
-#find::-webkit-input-placeholder {
-    color: #000000;
-    font-size: var(--font-size-header-find);
-}
+/*#find::-webkit-input-placeholder {*/
+/*    color: #000000;*/
+/*    font-size: var(--font-size-header-find);*/
+/*}*/
 
 .find {
     width: 33%;
@@ -114,7 +114,6 @@ body {
 .tab {
     display: none;
     border-bottom: 0 solid sienna;
-
 }
 
 .tab.is-active {

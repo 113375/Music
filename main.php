@@ -21,7 +21,8 @@
             <?php
             if (!$_COOKIE['user']) {
                 include "templates/main/main_without_reg.php";
-            } ?>
+            }
+            ?>
 
         </div>
         <div class="tab" block-content-name="profile">
@@ -29,10 +30,21 @@
                 include "templates/main/profile_without_reg.php";
             } ?>
         </div>
+
+        <div class="tab" block-content-name="registration">
+            <?php
+            include  "templates/main/registration.php";
+            ?>
+        </div>
+
+        <div class="tab" block-content-name="log-in">
+            <?php
+            include "templates/main/log_in.php";
+            ?>
+        </div>
     </div>
 
 </div>
 <script src="js/navbar.js"></script>
-
 </body>
 </html>

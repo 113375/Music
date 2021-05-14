@@ -8,16 +8,16 @@
             Пока вы не вошли, тут будет лишь камень с тремя путями:
         </div>
         <div class="buttons">
-            <div class="button registration">
+            <div class="tabs-nav__item button registration" data-tab-name="registration">
                 Регистрация
             </div>
-            <div class="button log-in" style="padding: 7px 50px; ">
+            <div class="tabs-nav__item button log-in" data-tab-name="log-in" style="padding: 7px 50px; ">
                 Вход
             </div>
 
         </div>
         <div class="one_button">
-            <div class="button" >
+            <div class="button to-main-button" >
                 Главная
             </div>
         </div>
