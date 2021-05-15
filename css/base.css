@@ -98,7 +98,7 @@ body {
     height: var(--photo-height);
     width: var(--photo-height);
 
-    background-color: #1c7430;
+    background-color: #000000;
     border-radius: 60px;
 }
 

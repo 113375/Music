@@ -74,11 +74,20 @@
 /*тут будут стили страницы входа и регистрации*/
 
 .for-forms{
-    display: flex;
     width: 100%;
     justify-content: space-between;
-    padding-top: 70px;
-    height: 400px;
+    /*padding-top: 35px;*/
+    /*padding: 2px 60px 30px 2px;*/
+
+}
+
+.two_buttons{
+    background-color: #9c5fd6;
+}
+
+
+.buttons .is-active{
+    background-color: var(--light-red);
 }
 /*TODO надо сделать адаптивность*/
 

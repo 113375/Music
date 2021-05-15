@@ -31,20 +31,17 @@
             } ?>
         </div>
 
-        <div class="tab" block-content-name="registration">
+        <div class="tab" block-content-name="log-in-and-registration">
             <?php
-            include  "templates/main/registration.php";
-            ?>
-        </div>
-
-        <div class="tab" block-content-name="log-in">
-            <?php
-            include "templates/main/log_in.php";
+            include "templates/main/reg_and_log_in.php";
             ?>
         </div>
     </div>
 
 </div>
 <script src="js/navbar.js"></script>
+<script src="js/registration_and_log_in/reg_and_log_in.js"></script>
+<script src="js/registration_and_log_in/reg_and_log_in_header.js"></script>
+
 </body>
 </html>
