@@ -26,9 +26,7 @@
                <?php require "templates/admin/addMusician.php"?>
             </div>
             <div class="tab " block-content-name="new_genre">
-                <div class="new_genre">
-
-                </div>
+                <?php require "templates/admin/addGenre.php"?>
             </div>
             <div class="tab " block-content-name="new_album">
                 <div class="new_album">
@@ -47,7 +45,6 @@
 
 </div>
 </body>
-<script src="js/admin/admin.js"></script>
 <script src="js/navbar.js"></script>
 </html>
 

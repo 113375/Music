@@ -1,5 +1,10 @@
-<div class="new_musician">
-    <div class="add_musician">
+<?php
+ //TODO тут будет добавление нового жанра
+?>
+
+
+<div class="new_genre">
+    <div class="add_genre">
         <div class="form-add-musician">
             <div id="header">
                 <div class="button btn-info button-custom">
@@ -13,6 +18,6 @@
 
     <div>
     </div>
-    <script src="js/admin/addMusician.js"></script>
+    <script src="js/admin/addGenre.js"></script>
 
 </div>
