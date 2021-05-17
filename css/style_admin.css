@@ -101,17 +101,23 @@ textarea {
     /*стили добавления нового жанра*/
 }
 
+.genre_block{
+    transition: all 2s ease;
+    display: flex;
+    margin: 20px;
+}
+
+
+.new_album {
+    /*стили добавления нового альбома*/
+}
+
 .album_block{
     transition: all 2s ease;
     display: flex;
     margin: 20px;
 
 }
-
-.new_album {
-    /*стили добавления нового альбома*/
-}
-
 .users {
     /*стили показа всех пользователей платформы для их редактирования итд */
 }

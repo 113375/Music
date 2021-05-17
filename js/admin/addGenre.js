@@ -5,7 +5,7 @@ let activateButtonAdd = function () {
     function addBlock() {
         let container = document.querySelector(".form-add-genre") // куда потом запихну блок
         let block = document.createElement("div");
-        block.classList.add("album_block");
+        block.classList.add("genre_block");
 
         let divForInput = document.createElement("div");
         let input = document.createElement("input");
