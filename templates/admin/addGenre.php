@@ -5,12 +5,12 @@
 
 <div class="new_genre">
     <div class="add_genre">
-        <div class="form-add-musician">
+        <div class="form-add-genre">
             <div id="header">
-                <div class="button btn-info button-custom">
+                <div class="button button-genre-add btn-info button-custom">
                     Добавить
                 </div>
-                <button type="button" class="btn-dark button-custom">Отправить</button>
+                <button type="button"  class="btn-dark button-custom">Отправить</button>
             </div>
         </div>
 

@@ -4,7 +4,7 @@
 ?>
 <div class="new_album">
     <div class="add_album">
-        <div class="form-add-musician">
+        <div class="form-add-album">
             <div id="header">
                 <div class="button btn-info button-custom">
                     Добавить

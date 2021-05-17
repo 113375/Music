@@ -1,4 +1,4 @@
-let add_jquery = function (){
+let add_jquery = function () {
     var script = document.createElement('script');
     script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
     script.type = 'text/javascript';
@@ -119,11 +119,14 @@ async function make_single_insert() {
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
-
+    let par = this;
     xhr.onreadystatechange = function () {
         // если запрос принят и сервер ответил, что всё в порядке
         if (xhr.readyState === 4 && xhr.status === 200) {
             alert(this.responseText);
+            if(this.responseText !== "Не заполнены обязательные поля (Имя и начало карьеры)")
+            par.parentElement.parentElement.remove();
+
         }
     };
     let photo = all_data.get("photo");
@@ -136,10 +139,11 @@ async function make_single_insert() {
     });
     xhr.send(data);
 
+
     let id = 0;
     let table = "musician"
     if (photo) {
-        let data = make_request("SELECT id FROM musician WHERE name = ? AND start = ?", [all_data.get("name"), all_data.get("start")]);
+        // let data = make_request("SELECT id FROM musician WHERE name = ? AND start = ?", [all_data.get("name"), all_data.get("start")]);
         // load_photo(photo, id, table);
     }
 }
@@ -162,32 +166,6 @@ function make_request(query, params) {
     }).fail(function (error) {
         console.log(error);
     });
-    // fetch("http://localhost:8888/Music/query.php",
-    //     {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(param)
-    //     }).then(resp => {
-    //     if (resp.status === 200) {
-    //         return resp.json()
-    //     } else {
-    //         console.log("Status: " + resp.status)
-    //         return Promise.reject("server")
-    //     }
-    // })
-    //     .then(dataJson => {
-    //         dataReceived = JSON.parse(dataJson)
-    //     })
-    //     .catch(err => {
-    //         if (err === "server") return
-    //         console.log(err)
-    //     })
-    //
-    // console.log(`Received: ${dataReceived}`)
-
-
 }
 
 
@@ -210,6 +188,7 @@ function load_photo(photo, id, table) {
     request.send(form);
 
 }
+
 add_jquery()
 
 add_button();

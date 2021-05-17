@@ -46,10 +46,15 @@ input {
 
 }
 
-
-.new_musician {
-    /*стили добавление нового музыканта*/
+input::-moz-placeholder {
+    color: #4e69b7;
 }
+
+input::-webkit-input-placeholder {
+    color: #4e69b7;
+}
+
+
 
 .button {
     cursor: pointer;
@@ -88,9 +93,19 @@ textarea {
     border-radius: 11px;
     padding: 1%;
 }
+.new_musician {
+    /*стили добавление нового музыканта*/
+}
 
 .new_genre {
     /*стили добавления нового жанра*/
+}
+
+.album_block{
+    transition: all 2s ease;
+    display: flex;
+    margin: 20px;
+
 }
 
 .new_album {

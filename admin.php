@@ -29,14 +29,10 @@
                 <?php require "templates/admin/addGenre.php"?>
             </div>
             <div class="tab " block-content-name="new_album">
-                <div class="new_album">
-
-                </div>
+                <?php require "templates/admin/addAlbum.php"?>
             </div>
             <div class="tab " block-content-name="users">
-                <div class="users">
-
-                </div>
+                <?php require "templates/admin/showUsers.php"?>
             </div>
         </div>
 
