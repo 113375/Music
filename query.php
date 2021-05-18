@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 include "admin/dataBase.php";
 function query($query, $param, $all)
 {
@@ -12,8 +13,7 @@ function query($query, $param, $all)
     }
     return $row;
 }
-header("Content-Type: application/json");
 
-$data = json_decode(file_get_contents("php://input"));
-json_encode(query($data->query, $data->params, $data->all));
+//$data = json_decode(file_get_contents("php://input"));
+//echo json_encode(query($data->query, $data->params, $data->all));
 
