@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/main/main_without_reg.css">
+    <link rel="stylesheet" href="css/registration_and_log_in/reg_and_log_in.css">
 </head>
 <body>
 <?php include "templates/header.php" ?>

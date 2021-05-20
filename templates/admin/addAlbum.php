@@ -1,7 +1,3 @@
-<?php
-//TODO тут будет добавление нового жанра
-
-?>
 <div class="new_album">
     <div class="add_album">
         <div class="form-add-album">

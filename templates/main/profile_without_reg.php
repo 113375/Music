@@ -1,7 +1,3 @@
-<?php
-
-//TODO Надо будет сделать в блоке три кнопки перехода на главную, на регистрацию и на вход
-?>
 <div class="container-for-offers">
     <div class="side side-profile">
         <div class="text-inside-side">

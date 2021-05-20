@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Админка</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style_admin.css">
+    <link rel="stylesheet" href="css/admin/style_admin.css">
 </head>
 <body>
 

@@ -1,5 +1,4 @@
 <?php
-//TODO тут будет вкладки с регистрацией и входом (как header)
 include "templates/login_and_reg/two_buttons.php";
 ?>
 <div class="tab" block-content-name="registration">

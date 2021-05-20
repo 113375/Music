@@ -17,13 +17,22 @@ let activateButtonAddAlbum = function () {
                 return response.json()
             })
             .then(function (data) {
-                console.log('data', data)
                 all["musician"] = data;
-            }).then(appendBlock)
+            }).then(fetchGenre)
+
+
+        function fetchGenre() {
+            let url = "http://localhost:8888/Music/admin/genre/get.php"
+            fetch(url)
+                .then(function (response) {
+                    return response.json()
+                })
+                .then(function (data) {
+                    all["genre"] = data;
+                }).then(appendBlock)
+        }
 
         function appendBlock() {
-
-            all["genre"] = [{id: 2, name: "Супер пупер рок"}, {id: 2, name: "Металл"}];
 
             let data = [[{name: "name", type: "text", teg: "input", place: "Имя"}, {
                 name: "year",
@@ -56,6 +65,7 @@ let activateButtonAddAlbum = function () {
                         elem.style.width = "40%";
                         elem.style.marginTop = "20px"
                         elem.style.textAlign = "center"
+                        elem.addEventListener("click", AddBlockSong)
                     }
                     div.appendChild(elem);
 
@@ -105,12 +115,17 @@ let activateButtonAddAlbum = function () {
             //добавление всех элементов
             blockAlbum.appendChild(textArea)
             blockAlbum.appendChild(buttons);
+            let div = document.createElement("div");
+            div.appendChild(blockAlbum);
 
-            block.appendChild(blockAlbum);
+            block.appendChild(div);
 
 
             function AddBlockSong() {
                 //тут будет добавление блока с добавлением песни
+                //TODO надо сделать добавление блока с песней
+                let block = this.parentElement.parentElement.parentElement; // сюда можно будет пихать песню
+                console.log(block);
             }
 
             function delete_button_active() {

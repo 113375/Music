@@ -1,6 +1,3 @@
-//TODO тут будет работа вкладок на сайте с регистрацией и входом to-reg-and-lig-in
-
-
 let addButtonsToRegAndLogIn = function (){
     let buttons = document.querySelectorAll(".to-reg-and-lig-in");
     buttons.forEach(button => {
@@ -34,7 +31,6 @@ let addButtonsToRegAndLogIn = function (){
             }
         })
         let content = document.querySelectorAll(".tab");
-        console.log(content);
         content.forEach(elem =>{
             if( elem.getAttribute("block-content-name") === name){
                 elem.classList.add("is-active");

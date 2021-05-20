@@ -3,7 +3,7 @@
 
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents("php://input"));
-include  "dataBase.php"; // не менять эту строку, даже если очень хочется
+include "dataBase.php"; // не менять эту строку, даже если очень хочется
 
 try {
     if ($data->name && $data->text) {
