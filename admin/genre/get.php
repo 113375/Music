@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-include " admin/dataBase.php";
+
 function get($all, $query)
 {
     //сделать запрос жанра по параметрам

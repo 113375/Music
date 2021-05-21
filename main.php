@@ -20,14 +20,14 @@
         <div class="tab is-active" block-content-name="main_page">
 
             <?php
-            if (!$_COOKIE['user']) {
+            if (!$_COOKIE['name']) {
                 include "templates/main/main_without_reg.php";
             }
             ?>
 
         </div>
         <div class="tab" block-content-name="profile">
-            <?php if (!$_COOKIE['user']) {
+            <?php if (!$_COOKIE['name']) {
                 include "templates/main/profile_without_reg.php";
             } ?>
         </div>
@@ -40,6 +40,7 @@
     </div>
 
 </div>
+<script src="js/getCookie.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/registration_and_log_in/reg_and_log_in.js"></script>
 <script src="js/registration_and_log_in/reg_and_log_in_header.js"></script>

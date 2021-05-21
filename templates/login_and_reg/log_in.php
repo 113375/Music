@@ -16,11 +16,6 @@
                 </div>
                 <div class="form-group">
 <!--                    С электрометками на руке-->
-                    <div class="main-checkbox">
-                        <input type="checkbox" value="none" id="checkbox1" name="check"/>
-                        <label for="checkbox1"></label>
-                    </div>
-                    <span class="text">Запомнить</span>
                     <div class="btn btn-default log-in-button">ВХОД</div>
                 </div>
             </form>

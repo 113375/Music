@@ -14,7 +14,11 @@
 
         <div class="name-photo">
             <div id="name">
-                Имя тут будет
+                <?php if($_COOKIE["name"]):?>
+                <?= $_COOKIE["name"]?>
+                <?php else:?>
+                неизвестный
+                <?php endif;?>
             </div>
             <div id="photo"></div>
         </div>
