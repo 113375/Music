@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/main/main_without_reg.css">
     <link rel="stylesheet" href="css/registration_and_log_in/reg_and_log_in.css">
+    <link rel="stylesheet" href="css/main/main.css">
 </head>
 <body>
 <?php include "templates/header.php" ?>
@@ -21,20 +22,24 @@
 
             <?php
             if (!$_COOKIE['name']) {
-                include "templates/main/main_without_reg.php";
+                include "templates/main/without_reg/main_without_reg.php";
+            }else{
+                include "templates/main/with_reg/main.php";
             }
             ?>
 
         </div>
         <div class="tab" block-content-name="profile">
             <?php if (!$_COOKIE['name']) {
-                include "templates/main/profile_without_reg.php";
-            } ?>
+                include "templates/main/without_reg/profile_without_reg.php";
+            } else{
+                include "templates/main/with_reg/profile.php";
+            }?>
         </div>
 
         <div class="tab" block-content-name="log-in-and-registration">
             <?php
-            include "templates/main/reg_and_log_in.php";
+            include "templates/main/without_reg/reg_and_log_in.php";
             ?>
         </div>
     </div>

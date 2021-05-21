@@ -42,7 +42,7 @@
 
     </div>
     <script src="https://js.cx/libs/animate.js"></script>
-    <script src="js/main/main_without_reg.js"></script>
+    <script src="js/main/without_reg/main_without_reg.js"></script>
 </div>
 
 

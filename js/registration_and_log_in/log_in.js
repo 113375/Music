@@ -40,6 +40,7 @@ function addLogInButton() {
                 }else{
                    let name = document.querySelector("#name");
                    name.textContent = get_cookie("name");
+                   location.reload() // перезагружаю страницу
                 }
             })
 

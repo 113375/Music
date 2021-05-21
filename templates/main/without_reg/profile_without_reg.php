@@ -20,7 +20,7 @@
 
     </div>
 </div>
-<script src="js/main/profile_without_reg.js"></script>
+<script src="js/main/without_reg/profile_without_reg.js"></script>
 
 
 
