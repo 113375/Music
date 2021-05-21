@@ -1,5 +1,3 @@
-//TODO надо сделать логику профиля
-
 let activateButton = function () {
     let button = document.querySelector(".button-log-out");
     button.addEventListener("click", conf)
