@@ -1,11 +1,8 @@
-//TODO надо будет сделать регистрацию пользователя
-
 let registrationButton = function () {
     let button = document.querySelector(".registration-button");
     button.addEventListener("click", checkForm);
 
     function checkForm() {
-        // TODO надо будет тут сделать проверку форм
         let parent = this.parentElement.parentElement;
         let name = parent.children[1].children[0].value;
         let email = parent.children[2].children[0].value;
@@ -14,7 +11,6 @@ let registrationButton = function () {
         if (!check(name, email, password, passwordRepeat)) {
             return false;
         }
-
         request({"name": name, "email": email, "password": password});
         // location.reload()
 
