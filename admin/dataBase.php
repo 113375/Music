@@ -6,5 +6,4 @@ function pdo()
     return new PDO('mysql:host=localhost;dbname=music', $user, $pass);
     
 }
-
 ?>

@@ -19,8 +19,6 @@ try {
             $data->end = null;
         $stmt->execute();
         echo "Музыкант $data->name добавлен";
-
-        header("Content-Type: application/json");
     } else {
         echo "Не заполнены обязательные поля (Имя и начало карьеры)";
     }
