@@ -19,8 +19,7 @@ function check($data)
         setcookie("email", $row["email"], time() + 3600, "/", "", 0);
         setcookie("id", $row["id"], time() + 3600, "/", "", 0);
         return json_encode($row);
-    }
-    else {
+    } else {
         return json_encode(["error" => "Неправильный пароль"]);
     }
 }
