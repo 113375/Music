@@ -1,5 +1,4 @@
 <?php
-//TODO сделать добавление нового жанра в базу данных
 
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents("php://input"));

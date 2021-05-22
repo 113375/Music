@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main/main.css">
 </head>
 <body>
-<?php include "templates/header.php" ?>
+<?php include "templates/parts/header.php" ?>
 <div class="">
 
     <div class="tabs__content">

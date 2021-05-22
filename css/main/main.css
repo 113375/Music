@@ -1,4 +1,4 @@
-.profile-header{
+.main-header {
     position: fixed;
     top: 80px;
     display: flex;
@@ -6,9 +6,33 @@
     width: 90%;
 }
 
-.about-account{
+.about-account {
     display: flex;
     justify-content: space-between;
     width: 20%;
     font-size: 23px;
 }
+
+.main-header input {
+    /*середина header*/
+    height: 35px;
+    border: 0 solid #cccccc;
+    border-radius: 10px;
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 30%;
+    margin-left: auto;
+}
+
+#find::-moz-placeholder {
+    color: #000000;
+    font-size: var(--font-size-header-find);
+}
+
+#find::-webkit-input-placeholder {
+    color: #000000;
+    font-size: var(--font-size-header-find);
+}
+
+

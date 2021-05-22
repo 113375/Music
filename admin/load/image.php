@@ -8,7 +8,6 @@ echo '<pre>';
 if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
     $id = $_POST["id"];
     $pdo = pdo(); // подключаю базу данных
-    //TODO надо будет доедлать обработку фото, сделать запрос update
     $stmt = $pdo->prepare("UPDATE  musician SET photo = ? WHERE id = ?");
     $stmt->execute([$uploaddir . basename($_FILES['image']['name']), $id]);
 

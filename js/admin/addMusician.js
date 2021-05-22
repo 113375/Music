@@ -1,9 +1,4 @@
-let add_jquery = function () {
-    var script = document.createElement('script');
-    script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-    script.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
+
 
 
 //кнопка добавления новой формы
@@ -124,8 +119,8 @@ async function make_single_insert() {
         // если запрос принят и сервер ответил, что всё в порядке
         if (xhr.readyState === 4 && xhr.status === 200) {
             alert(this.responseText);
-            if(this.responseText !== "Не заполнены обязательные поля (Имя и начало карьеры)")
-            par.parentElement.parentElement.remove();
+            if (this.responseText !== "Не заполнены обязательные поля (Имя и начало карьеры)")
+                par.parentElement.parentElement.remove();
 
         }
     };
@@ -139,58 +134,7 @@ async function make_single_insert() {
     });
     xhr.send(data);
 
-
-    let id = 0;
-    let table = "musician"
-    if (photo) {
-        // let data = make_request("SELECT id FROM musician WHERE name = ? AND start = ?", [all_data.get("name"), all_data.get("start")]);
-        // load_photo(photo, id, table);
-    }
 }
-
-function make_request(query, params) {
-    let dataReceived = ""
-    let param = {query: query, params: params, all: 0};
-    //TODO надо разобраться с jquery
-
-    $.ajax({
-        url: 'http://localhost:8888/Music/query.php',
-        type: 'POST',
-        dataType: 'json',
-        data: param
-    }).done(function (data) {
-        console.log(data);
-        for (let i = 0; i < data.length; i++) {
-            console.log(data[i]);
-        }
-    }).fail(function (error) {
-        console.log(error);
-    });
-}
-
-
-function load_photo(photo, id, table) {
-    //загрузка фото пользователя с по id
-    let form = new FormData();
-    form.append("image", photo)
-    form.append("id", id);
-    form.append("table", table)
-
-    let request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        // если запрос принят и сервер ответил, что всё в порядке
-        if (request.readyState === 4 && request.status === 200) {
-            alert(this.responseText);
-        }
-    };
-
-    request.open("POST", "http://localhost:8888/Music/admin/load/image.php");
-    request.send(form);
-
-}
-
-add_jquery()
-
 add_button();
 
 

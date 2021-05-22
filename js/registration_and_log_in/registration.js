@@ -12,7 +12,6 @@ let registrationButton = function () {
             return false;
         }
         request({"name": name, "email": email, "password": password});
-        // location.reload()
 
 
     }

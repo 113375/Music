@@ -20,7 +20,6 @@ function addLogInButton() {
             alert("введите правильную почту")
             return false
         }
-        //TODO надо сделать проверку пользователя
 
         let user = {
             email: email,

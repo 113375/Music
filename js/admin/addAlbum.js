@@ -4,7 +4,6 @@ let activateButtonAddAlbum = function () {
 
     function addBlockAlbum() {
         //тут будет добавление блока с альбомом
-        //TODO надо будет сделать блок с добавлением нового альбома, а там уже добавление песен
         let block = document.querySelector(".form-add-album"); // куда добавлять потом блок с альбомом
         let blockAlbum = document.createElement("div")
         blockAlbum.classList.add("album_block")
