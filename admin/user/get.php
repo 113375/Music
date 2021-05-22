@@ -13,4 +13,4 @@ function find($email, $pdo)
 }
 $pdo = new PDO('mysql:host=localhost;dbname=music', "root", "root");
 $data = json_decode(file_get_contents("php://input"));
-echo json_encode(find($data->email, $pdo));
+echo json_encode(patchUser($data->email, $pdo));

@@ -13,7 +13,7 @@ function find($email, $pdo)
 function addUser($data)
 {
     $pdo = new PDO('mysql:host=localhost;dbname=music', "root", "root");
-    if (!empty(find($data->email, $pdo))) {
+    if (!empty(patchUser($data->email, $pdo))) {
         return json_encode(["error" => "Существующий email"]);
     }
     $query = "INSERT INTO user(username, email, hash_password) VALUES (:username, :email, :password)";
@@ -23,7 +23,7 @@ function addUser($data)
     $stmt->bindParam(":password", $data->password);
 
     $stmt->execute();
-    $user = find($data->email, $pdo);
+    $user = patchUser($data->email, $pdo);
 
     setcookie("name", $data->name, time() + 3600, "/", "", 0);
     setcookie("email", $data->email, time() + 3600, "/", "", 0);
