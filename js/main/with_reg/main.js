@@ -7,12 +7,13 @@ let addAlbums = function () {
 
     function makePage(data) {
         let div = document.querySelector(".albums");
-        console.log(data);
         data.forEach(album => {
             let block = document.createElement("div");
             block.classList.add("block-with-album");
-            block.albumId = album["id"];
+            block.albumId = album["album_id"];
             block.albumName = album["name"]
+            block.genreId = album["genre_id"]
+            block.musicianId = album["musician_id"];
 
             let name, musician, year, genre;
             name = document.createElement("div");
@@ -28,7 +29,6 @@ let addAlbums = function () {
             genre.innerText = album["genre_name"];
 
 
-            //TODO сделать, чтобы по нажатию открывалась страница с альбомом
             block.appendChild(name);
             block.appendChild(genre)
             block.appendChild(musician);
@@ -41,8 +41,9 @@ let addAlbums = function () {
     }
 
     function openAlbumPage() {
-        //TODO надо сделать открытие страницы альбома
-        window.open(`http://localhost:8888/Music/templates/album/album.php?albumId=${this.albumId}&albumName=${this.albumName}`, '_blank');
+        window.open(`http://localhost:8888/Music/templates/album/album.php?albumId=
+        ${this.albumId}&albumName=${this.albumName}&genreId=${this.genreId}
+        &musicianId=${this.musicianId}&song=0`, '_blank');
 
     }
 
@@ -54,7 +55,7 @@ let addAlbums = function () {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(json)
         })
             .then(function (response) {
                 return response.json()

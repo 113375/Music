@@ -9,3 +9,71 @@
     text-align: center;
     width: 20%;
 }
+
+.all-inf {
+    display: flex;
+    margin-top: 30px;
+}
+
+
+.songs {
+    width: 50%;
+    text-align: center;
+    padding: 10px 40px 40px;
+}
+
+.header {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.title {
+    margin: auto;
+    font-size: 40px;
+}
+
+.song {
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: .4s ease-in-out;
+
+}
+.song:hover{
+    color: #8e0303;
+}
+
+.text {
+    font-size: 35px;
+    padding: 20px;
+}
+
+.description {
+    border-top: 1px solid grey;
+    font-size: 20px;
+    padding-top: 20px;
+    /*margin-top: 20px;*/
+    top: 600px;
+    position: fixed;
+
+}
+
+.container {
+    height: 700px;
+}
+
+.spotify {
+    padding-left: 5%;
+    padding-bottom: 50px;
+    display: flex;
+    width: 50%;
+
+}
+
+.song-desc {
+    width: 50%;
+    font-size: 20px;
+    margin-left: 30px;
+}

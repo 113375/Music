@@ -10,6 +10,7 @@
         <div class="songs">
             <div class="main-header">
                 <input type="text" placeholder="Поиск по песням">
+<!--                TODO надо сделать песни + поиск по песня, но в итоге все равно все идет в альбом -->
             </div>
         </div>
     </div>
