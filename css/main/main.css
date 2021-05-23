@@ -4,6 +4,7 @@
     width: 50%;
     background-color: var(--bg-color);
     padding-top: 10px;
+    display: flex;
 }
 .main-header-profile{
     position: fixed;
@@ -23,7 +24,7 @@
 
 .main-header input {
     /*середина header*/
-    height: 35px;
+    height: 45px;
     border: 0 solid #cccccc;
     border-radius: 10px;
     text-align: right;
@@ -66,4 +67,8 @@
     text-align: center;
     cursor: pointer;
     margin-bottom: 10px;
+}
+
+.find-button{
+    margin-left: 20px;
 }
