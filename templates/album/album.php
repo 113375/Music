@@ -37,17 +37,35 @@ $songs = $stmt->fetchALL();
     <div class="all-inf">
         <div class="spotify">
             <?= $songs[$_GET["song"]]["link"] ?>
-            <div class="song-desc"><?= $songs[$_GET["song"]]["description"]?></div>
+            <div class="song-desc"><?= $songs[$_GET["song"]]["description"] ?></div>
         </div>
         <div class="songs">
-            <div class="text">Песни альбома </div>
-            <?php foreach ($songs as $song):?>
-                <div songId="<?= $song['id']?>" class="song"><?= $song["name"]?></div>
-            <?php endforeach;?>
+            <div class="text">Песни альбома</div>
+            <?php foreach ($songs as $song): ?>
+                <div class="song-div">
+                    <div songId="<?= $song['id'] ?>" class="song">
+                        <?= $song["name"] ?>
+                    </div>
+                    <div class="button-like">
+                        <?php
+                        $stmt = $pdo->prepare("SELECT * FROM saved WHERE user_id = :userId and song_id = :songId");
+                        $stmt->bindParam(":userId", $song['id']);
+                        $stmt->bindParam(":songId", $_COOKIE["id"]);
+                        $stmt->execute();
+                        $res = $stmt->fetch();
+                        ?>
+                        <?php if ($res): ?>
+                            <img src="/Music/img/like.png" alt="">
+                        <?php else: ?>
+                            <img src="/Music/img/simple.png" alt="">
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
     <div class="description modal-footer">
-        <?= $about_album["description"]?>
+        <?= $about_album["description"] ?>
     </div>
 </div>
 <script src="/Music/js/album/album.js"></script>
