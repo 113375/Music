@@ -22,7 +22,7 @@
     font-size: 23px;
 }
 
-.main-header input {
+ input {
     /*середина header*/
     height: 45px;
     border: 0 solid #cccccc;
@@ -71,4 +71,18 @@
 
 .find-button{
     margin-left: 20px;
+}
+
+.profile-header{
+    display: flex;
+}
+
+.songs-profile{
+    width: 50%;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.songs-profile input{
+    margin-left: auto;
 }

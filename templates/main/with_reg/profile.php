@@ -13,5 +13,17 @@
             </div>
         </div>
     </div>
+        <div class="songs-profile">
+            <div class="profile-header">
+                <input type="text" class="find-song-liked" placeholder="Поиск по сохраненным песням">
+                <div class="button button-song-liked find-button">
+                    Сбросить
+                </div>
+            </div>
+            <div class="show-songs-liked">
+
+            </div>
+    </div>
+
 </div>
 <script src="js/main/with_reg/profile.js"></script>
