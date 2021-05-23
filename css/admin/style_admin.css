@@ -118,6 +118,12 @@ textarea {
     margin: 20px;
 
 }
-.users {
+.sql {
     /*стили показа всех пользователей платформы для их редактирования итд */
+
+}
+.sql input{
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
 }

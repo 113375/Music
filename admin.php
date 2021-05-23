@@ -18,7 +18,7 @@
             <div class="tabs-nav__item is-active" data-tab-name="new_musician">Новый музыкант</div>
             <div class="tabs-nav__item" data-tab-name="new_genre">Новый жанр</div>
             <div class="tabs-nav__item" data-tab-name="new_album">Новый альбом</div>
-            <div class="tabs-nav__item" data-tab-name="users">Пользователи</div>
+            <div class="tabs-nav__item" data-tab-name="users">Ввод sql</div>
         </div>
         <div class="tabs__content">
             <div class="tab is-active" block-content-name="new_musician">
@@ -32,7 +32,7 @@
                 <?php require "templates/admin/addAlbum.php"?>
             </div>
             <div class="tab " block-content-name="users">
-                <?php require "templates/admin/showUsers.php"?>
+                <?php require "templates/admin/sql.php" ?>
             </div>
         </div>
 
