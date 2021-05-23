@@ -41,34 +41,39 @@ $songs = $stmt->fetchALL();
         </div>
         <div class="songs">
             <div class="text">Песни альбома</div>
-            <?php foreach ($songs as $song): ?>
-                <div class="song-div">
-                    <div songId="<?= $song['id'] ?>" class="song">
-                        <?= $song["name"] ?>
-                    </div>
-                    <div class="button-like">
-                        <?php
-                        $stmt = $pdo->prepare("SELECT * FROM saved WHERE user_id = :userId and song_id = :songId");
-                        $stmt->bindParam(":userId", $song['id']);
-                        $stmt->bindParam(":songId", $_COOKIE["id"]);
-                        $stmt->execute();
-                        $res = $stmt->fetch();
-                        ?>
-                        <?php if ($res): ?>
-                            <img isActive="true" src="/Music/img/like.png" songId="<?= $song['id']?>"alt="">
-                        <?php else: ?>
-                            <img isActive="false" songId="<?= $song['id']?>" src="/Music/img/simple.png" alt="">
+            <?php foreach ($songs
+
+            as $song): ?>
+            <div class="song-div">
+                <div songId="<?= $song['id'] ?>" class="song">
+                    <?= $song["name"] ?>
+                </div>
+                <?php
+                $stmt = $pdo->prepare("SELECT * FROM saved WHERE user_id = :userId and song_id = :songId");
+                $stmt->bindParam(":userId", $_COOKIE["id"]);
+                $stmt->bindParam(":songId", $song['id']);
+                $stmt->execute();
+                $res = $stmt->fetch();
+                ?>
+
+
+                <?php if ($res): ?>
+                    <div  class="button-like" isActive="true" songId="<?= $song['id'] ?>">
+                    <img src="/Music/img/like.png" alt="">
+                    <?php else: ?>
+                    <div songId="<?= $song['id'] ?>" isActive="false" class="button-like">
+                        <img src="/Music/img/simple.png" alt="">
                         <?php endif; ?>
                     </div>
                 </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="description modal-footer">
+            <?= $about_album["description"] ?>
         </div>
     </div>
-    <div class="description modal-footer">
-        <?= $about_album["description"] ?>
-    </div>
-</div>
-<script src="/Music/js/album/album.js"></script>
+    <script src="/Music/js/album/album.js"></script>
 
 </body>
 </html>

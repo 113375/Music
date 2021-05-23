@@ -60,8 +60,10 @@ let songs = function () {
 }
 
 let likeButton = function () {
-    let button = document.querySelector(".button-like");
-    button.addEventListener("click", changeStatus)
+    let button = document.querySelectorAll(".button-like");
+    button.forEach(elem => {
+        elem.addEventListener("click", changeStatus)
+    })
 
     function changeStatus() {
         let liked = this.getAttribute("isActive") === "true";
@@ -69,19 +71,24 @@ let likeButton = function () {
         if (liked) {
             this.setAttribute("isActive", "false")
             let data = {
-                "query": `DELETE
-                          FROM saved s
-                          WHERE s.song_id = ${id}
-                            AND s.user_id = ${get_cookie("id")}`, "all": false
+                "query": `DELETE 
+                          FROM saved 
+                          WHERE song_id = ${id}
+                            AND user_id = ${get_cookie("id")}`, "all": false, "fetch": 0
             }
+
+            let img = this.children[0]
+            img.src = "/Music/img/simple.png"
             makeRequest(data)
 
         } else {
             this.setAttribute("isActive", "true")
             let data = {
                 "query": `INSERT INTO saved(user_id, song_id)
-                          VALUES (${get_cookie("id")}, ${id})`, "all": false
+                          VALUES (${get_cookie("id")}, ${id})`, "all": false, "fetch": 0
             }
+            let img = this.children[0]
+            img.src = "/Music/img/like.png"
             makeRequest(data)
         }
 
@@ -97,9 +104,6 @@ let likeButton = function () {
             })
                 .then(function (response) {
                     return response.json()
-                })
-                .then(function (data) {
-
                 })
         }
 
