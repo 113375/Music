@@ -55,9 +55,9 @@ $songs = $stmt->fetchALL();
                         $res = $stmt->fetch();
                         ?>
                         <?php if ($res): ?>
-                            <img src="/Music/img/like.png" alt="">
+                            <img isActive="true" src="/Music/img/like.png" songId="<?= $song['id']?>"alt="">
                         <?php else: ?>
-                            <img src="/Music/img/simple.png" alt="">
+                            <img isActive="false" songId="<?= $song['id']?>" src="/Music/img/simple.png" alt="">
                         <?php endif; ?>
                     </div>
                 </div>

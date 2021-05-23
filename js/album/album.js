@@ -35,7 +35,7 @@ let songs = function () {
             .then(function (response) {
                 return response.json()
             })
-            .then(function (data){
+            .then(function (data) {
                 change(data)
             })
     }
@@ -49,7 +49,7 @@ let songs = function () {
             desc.classList.add("song-desc");
             desc.textContent = data["description"];
             block.appendChild(desc)
-        }else{
+        } else {
             let text = document.createElement("div");
             block.innerHTML = ""
             text.textContent = "Ссылка на виджет отсутствует";
@@ -58,5 +58,61 @@ let songs = function () {
         }
     }
 }
+
+let likeButton = function () {
+    let button = document.querySelector(".button-like");
+    button.addEventListener("click", changeStatus)
+
+    function changeStatus() {
+        let liked = this.getAttribute("isActive") === "true";
+        let id = this.getAttribute("songId");
+        if (liked) {
+            this.setAttribute("isActive", "false")
+            let data = {
+                "query": `DELETE
+                          FROM saved s
+                          WHERE s.song_id = ${id}
+                            AND s.user_id = ${get_cookie("id")}`, "all": false
+            }
+            makeRequest(data)
+
+        } else {
+            this.setAttribute("isActive", "true")
+            let data = {
+                "query": `INSERT INTO saved(user_id, song_id)
+                          VALUES (${get_cookie("id")}, ${id})`, "all": false
+            }
+            makeRequest(data)
+        }
+
+
+        function makeRequest(data) {
+            let url = "http://localhost:8888/Music/admin/query.php";
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(function (response) {
+                    return response.json()
+                })
+                .then(function (data) {
+
+                })
+        }
+
+        function get_cookie(cookie_name) {
+            let results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+
+            if (results)
+                return (unescape(results[2]));
+            else
+                return null;
+        }
+    }
+}
 songs()
 homeButton()
+likeButton()
