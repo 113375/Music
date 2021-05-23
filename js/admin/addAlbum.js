@@ -127,7 +127,6 @@ let activateButtonAddAlbum = function () {
 
             function AddBlockSong() {
                 //тут будет добавление блока с добавлением песни
-                //TODO надо сделать добавление блока с песней
                 let block = this.parentElement.parentElement.parentElement; // сюда можно будет пихать песню
                 console.log(block);
 

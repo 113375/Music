@@ -1,7 +1,3 @@
-<?php
-//TODO там будут все любимые песни + возможно все плейлисты
-?>
-
 <div class="container-for-offers">
 <!--    тут будет весь контент-->
     <div class="main-header-profile">
