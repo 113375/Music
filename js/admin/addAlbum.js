@@ -55,7 +55,12 @@ let activateButtonAddAlbum = function () {
                         all[dict["name"]].forEach(array => {
                             let option = document.createElement("option");
                             option.value = array["id"];
-                            option.text = array["name"];
+                            if(array["genre_name"])
+                                option.text = array["genre_name"];
+                            else{
+                                option.text = array["musician_name"];
+
+                            }
                             elem.appendChild(option);
                         });
                     } else {

@@ -75,7 +75,7 @@ let activateButtonAdd = function () {
 
         //делаем запрос на сервер
         let xhr = new XMLHttpRequest();
-        let url = "http://localhost:8888/Music/admin/genre.php";
+        let url = "http://localhost:8888/Music/admin/genre/append.php";
         xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         let par = this;

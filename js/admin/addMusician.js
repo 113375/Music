@@ -1,6 +1,3 @@
-
-
-
 //кнопка добавления новой формы
 let add_button = function () {
     //функция добавления новой формы для отправки
@@ -110,7 +107,7 @@ async function make_single_insert() {
 
 
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:8888/Music/admin/musician.php";
+    let url = "http://localhost:8888/Music/admin/musician/append.php";
 
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");

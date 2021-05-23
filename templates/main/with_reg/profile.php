@@ -5,7 +5,7 @@
 
 <div class="container-for-offers">
 <!--    тут будет весь контент-->
-    <div class="main-header">
+    <div class="main-header-profile">
         <div class="button button-log-out">
             Выход
         </div>

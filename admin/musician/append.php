@@ -6,11 +6,10 @@ header("Content-Type: application/json");
 // разбираем JSON-строку на составляющие встроенной командой
 $data = json_decode(file_get_contents("php://input"));
 // отправляем в ответ строку с подтверждением
-include "dataBase.php"; // не менять эту строку, даже если очень хочется
 try {
     if ($data->name && $data->start) {
-        $pdo = pdo();
-        $stmt = $pdo->prepare("INSERT INTO musician(name, start, end, description) VALUES (:name,:start,:end,:text)");
+        $pdo = new PDO('mysql:host=localhost;dbname=music', "root", "root");
+        $stmt = $pdo->prepare("INSERT INTO musician(musician_name, start, end, description) VALUES (:name,:start,:end,:text)");
         $stmt->bindParam(":name", $data->name);
         $stmt->bindParam(":start", $data->start);
         $stmt->bindParam(":end", $data->end);
