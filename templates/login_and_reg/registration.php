@@ -1,7 +1,3 @@
-<?php
-//TODO надо будет сделать регистрацию
-?>
-
 <div class="">
     <div class="row">
         <!--    ich liebe dich-->

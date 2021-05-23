@@ -38,7 +38,6 @@ $songs = $stmt->fetchALL();
         <div class="spotify">
             <?= $songs[$_GET["song"]]["link"] ?>
             <div class="song-desc"><?= $songs[$_GET["song"]]["description"]?></div>
-<!--            TODO надо будет сделать описание песни под самой песней-->
         </div>
         <div class="songs">
             <div class="text">Песни альбома </div>

@@ -1,8 +1,3 @@
-<?php
- //TODO тут будет добавление нового жанра
-?>
-
-
 <div class="new_genre">
     <div class="add_genre">
         <div class="form-add-genre">

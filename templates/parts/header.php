@@ -1,6 +1,3 @@
-<?php
-//TODO надо доделать header
-?>
 <div>
     <nav class="navigation">
 
