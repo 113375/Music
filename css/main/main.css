@@ -75,6 +75,9 @@
 
 .profile-header{
     display: flex;
+    margin-bottom: 30px;
+    position: fixed;
+    top: 100px;
 }
 
 .songs-profile{
