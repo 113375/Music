@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-function find($email, $pdo)
+function patchUser($email, $pdo)
 {
     $query = "SELECT * FROM user WHERE email = :email";
     $stmt = $pdo->prepare($query);
@@ -18,11 +18,12 @@ function addUser($data)
     }
     $query = "INSERT INTO user(username, email, hash_password) VALUES (:username, :email, :password)";
     $stmt = $pdo->prepare($query);
+
     $stmt->bindParam(":username", $data->name);
     $stmt->bindParam(":email", $data->email);
     $stmt->bindParam(":password", $data->password);
-
     $stmt->execute();
+
     $user = patchUser($data->email, $pdo);
 
     setcookie("name", $data->name, time() + 3600, "/", "", 0);
@@ -33,5 +34,4 @@ function addUser($data)
 
 $data = json_decode(file_get_contents("php://input"));
 echo addUser($data);
-
 
