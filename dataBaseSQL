@@ -1,0 +1,232 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5
+-- https://www.phpmyadmin.net/
+--
+-- Хост: localhost:8889
+-- Время создания: Май 24 2021 г., 07:16
+-- Версия сервера: 5.7.30
+-- Версия PHP: 7.4.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- База данных: `music`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `album`
+--
+
+CREATE TABLE `album` (
+  `album_id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `year` year(4) NOT NULL,
+  `genre_id` int(11) NOT NULL,
+  `musician_id` int(11) NOT NULL,
+  `description` varchar(2000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `album`
+--
+
+INSERT INTO `album` (`album_id`, `name`, `year`, `genre_id`, `musician_id`, `description`) VALUES
+(2, 'Herzeleid', 1995, 1, 2, 'Самый первый альбом группы, история его создания была очень занимательной. Они на конкурсе исполнили несколько песен из него, в итоне стали победителями. И они выиграли запись альбома на профессиональной студии. Так и появился на свет первый альбом группы, кстати рекомендую послушать песню Heirate mich\r\nС этим альбомом они в самом начале выступали на разных фестивалях, например Bizarre Festival\r\n'),
+(3, 'Sehnsucht', 1997, 1, 2, 'Самый мрачный альбом группы, но лично я считаю его одним из лучших. Мрачная атмосфера и странные темы затрагиваются в нем. Этот альбом исполнялся почти полностью в фильме, который был снят на выступлении Rammstein в Берлине(Live aus Berlin), Также две его песни постоянно исполняются на концертах: Sehnsucht и Du hast\r\n'),
+(4, 'Mutter', 2001, 1, 2, 'Альбом, сделавший их знаменитыми. Один из самых спокойных, много экспериментов с клавишами и электроники. Но несмотря на это в нем есть очень много прекрасных песен, которые вошли в историю музыки(Mutter) и другие'),
+(5, 'Reise Reise', 2004, 1, 2, 'Альбом частично сделан из песен про разные страны, такие как Moskau и Amerika. Также есть просто песни про путешествия, такие как Ohne dich \r\nТакже в этом альбоме присутствуют и песни с очень глубоким смыслом: Stein um Stein, а есть и просто на важные темы в обществе: Keine Lust и Mein Teil\r\n'),
+(6, 'Rosenrot', 2005, 1, 2, 'Альбом, полный экспериментов в музыке. Начиная от того, что почти в каждом треке используется дисторшн(или перегруз), что придает их музыке совсем другое звучание, оно более легким стало в некоторых моментах, но все равно достаточно тяжелая. Также на первый план в большей части песен вынесена бас гитара'),
+(7, 'Liebe ist für alle da', 2009, 1, 2, 'Один из самых противоречивых альбомов. Это смесь тяжелых рифов, высоких нот солиста(Ich tu dir weh) и медленных песен(Frühling in Paris). \r\nТакже почти все песни полны смысла(как обычно у Rammstein). Советую послушать песню Haifisch и Ich tu dir weh'),
+(8, 'RAMMSTEIN', 2019, 1, 2, 'После более десяти лет ожидания, публика получила свое: новый альбом RAMMSTEIN. После 10 лет ожидания они решили сделать сюрприх фанатам и выпустили свой новый альбом, в котором тяжелые рифы сочитаются с танцевальным ритмом и веселым текстом: Ausländer, но также в нем и много жесткого(Puppe) и очень много экспериментов: Deutschland. \r\nИменно с этого клипа начали свое возвращение в топы многих стран мира. В этом альбоме идеально смешиваются барабаны, гитарные рифы и клавишные, которых стало только больше(Weit Weg)\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `genre`
+--
+
+CREATE TABLE `genre` (
+  `id` int(11) NOT NULL,
+  `genre_name` varchar(255) NOT NULL,
+  `description` varchar(1000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `genre`
+--
+
+INSERT INTO `genre` (`id`, `genre_name`, `description`) VALUES
+(1, 'Металл', 'Лучший жанр на всей земле'),
+(2, 'Рок', 'Очень похож на металл по инструментам, но не настолько жесткий'),
+(3, 'Панк', 'Тоже жанр, похожий на рок, но намного легче. Часто ииеются провакационные текста, когда-то было модно быть панком');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `musician`
+--
+
+CREATE TABLE `musician` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `musician_name` varchar(255) NOT NULL,
+  `start` year(4) NOT NULL,
+  `end` year(4) DEFAULT NULL,
+  `description` varchar(3000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `musician`
+--
+
+INSERT INTO `musician` (`id`, `musician_name`, `start`, `end`, `description`) VALUES
+(3, 'Король и Шут', 1988, 2013, 'Просто крутая Панк группа'),
+(2, 'Rammstein', 1994, NULL, 'Это самая лучшая группа, которую я когдалибо слушал'),
+(4, 'Green Day', 1986, NULL, 'Группа, просто группа');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `saved`
+--
+
+CREATE TABLE `saved` (
+  `user_id` int(10) NOT NULL,
+  `song_id` int(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `saved`
+--
+
+INSERT INTO `saved` (`user_id`, `song_id`) VALUES
+(2, 3),
+(2, 8),
+(2, 9),
+(2, 6),
+(2, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `song`
+--
+
+CREATE TABLE `song` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `album_id` int(10) NOT NULL,
+  `description` varchar(2000) NOT NULL,
+  `link` varchar(500) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `song`
+--
+
+INSERT INTO `song` (`id`, `name`, `album_id`, `description`, `link`) VALUES
+(10, 'Rosenrot', 6, 'Название песни переводится как \'Розочка\', очень мило звучит', '<iframe src=\"https://open.spotify.com/embed/track/50LmbBKCBeDRKYvpR7ApjG\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(2, 'Rammstein', 2, 'Песня про инцидент на аэродроме Ramstein, в котором столкнулись несколько самолетов', '<iframe src=\"https://open.spotify.com/embed/track/0Zfh4uDmJz3D44Qy9nYMqu\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(3, 'Herzeleid', 2, 'в переводе означает \'сердечная боль\', она про то, что ничто не вечно, и первый строчки песни гласят \'Оберегайте друг друга от сердечной боли\'', '<iframe src=\"https://open.spotify.com/embed/track/1Ix5KgMrv9kFPZN6g75CeS\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(4, 'Sehnsucht', 3, 'Песня про тоску, ностальгию. О том, что она незаметно жалит тебя, пока ты спишь, и про то, как она прячется, ожидая этого', '<iframe src=\"https://open.spotify.com/embed/track/3oWFQPp5lL5x907hCcCRa9\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(5, 'Eifersucht', 3, 'Песня про ревность. \'Я красивее, изуродуй мне лицо\' и все в таком странном духе. Что достаточно сильно отражает ревность в реальности', '<iframe src=\"https://open.spotify.com/embed/track/2R5Zsb2TtsjHAEJFUZvf7v\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(6, 'Mutter', 4, 'Песня про ребенка, зачатого в пробирке, который хочет убить свою несуществующую мать, но в итоге погибает сам. ', '<iframe src=\"https://open.spotify.com/embed/track/7jfZybgHr6yzp4iuMS2K8u\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(7, 'Spieluhr', 4, 'В переводе на \'Музыкальная шкатулка\', она про мальчика, которого похоронили заживо вместе с этой шкатулкой в руках. Он хотел один побыть и притворился мертвым', '<iframe src=\"https://open.spotify.com/embed/track/0KFwkmCpsFqUs09Bs8iVFP\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(8, 'Stein um Stein', 5, 'В этой песне разворачивается целая история про то, как некий человек строит дом для своей возлюбленной. Без окон и дверей, без воздуха и еды. В жизни мы делаем точно так же, приватизируя себе человека, но только в переносном смысле, но исход один и тот же. В песне девушка явно умирает физически, а в жизни человек умирает морально', '<iframe src=\"https://open.spotify.com/embed/track/20hfLWeQSJnJ2CiPxmjzsj\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(9, 'Morgenstern', 5, 'Эта песня про уродливую девушку, как все считают, не обращая внимания на ее внутренний мир, и в конце лишь солнце говорит, что она красивая, когда абсолютно все твердят обратное', '<iframe src=\"https://open.spotify.com/embed/track/0gf9HMeZDXRexbuM5CihZg\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(11, 'Spring', 6, 'Кажется,что песня про весну, все так радостно. Но с немецкого это переводится как \'прыгай\'. В этой песни главный герой любуется видом с высокого моста. Но вдруг приходит толпа и кричит ему \'SPRING\', что в итоге он и делает', '<iframe src=\"https://open.spotify.com/embed/track/0Z8q59waoxGjcRZDC3ffhH\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(12, 'Ich tu dir Weh', 7, '', '<iframe src=\"https://open.spotify.com/embed/track/7ritPWOWvsthxFDxOz1OjH\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(13, 'Deutschland', 8, 'Спустя 10 лет, они выпустили это чудо...', '<iframe src=\"https://open.spotify.com/embed/track/2bPGTMB5sFfFYQ2YvSmup0\" width=\"300\" height=\"380\" frameborder=\"0\" allowtransparency=\"true\" allow=\"encrypted-media\"></iframe>'),
+(14, 'Zeig dich', 8, 'Песня про абсурдность бога, когда его просят появиться, но ничего не происходит(кто бы мог подумать)', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `hash_password` varchar(400) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `email`, `hash_password`) VALUES
+(1, '113375', 'test@gmail.com', 'passWord312'),
+(2, 'Dima', 'x@x', '123'),
+(8, 'xx', 'x@', 'qwerqwer');
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `album`
+--
+ALTER TABLE `album`
+  ADD PRIMARY KEY (`album_id`);
+
+--
+-- Индексы таблицы `genre`
+--
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `musician`
+--
+ALTER TABLE `musician`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `song`
+--
+ALTER TABLE `song`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `album`
+--
+ALTER TABLE `album`
+  MODIFY `album_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT для таблицы `genre`
+--
+ALTER TABLE `genre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT для таблицы `musician`
+--
+ALTER TABLE `musician`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
+-- AUTO_INCREMENT для таблицы `song`
+--
+ALTER TABLE `song`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
